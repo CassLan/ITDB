@@ -5,12 +5,14 @@ const ListApplications = () => {
 
     const [applications, setApplications] = useState([]);
 
+    const APIServer = "http://192.168.180.14:5000"
+
     // delete funuction
 
     const deleteTodo = async (serial) => {
         
         try {
-            const deleteApplication = await fetch(`http://192.168.180.156:5000/application/${serial}`, {
+            const deleteApplication = await fetch(`${APIServer}/application/${serial}`, {
                 method: "DELETE"
             });
             setApplications(applications.filter(application => application.Serial !== serial));
@@ -23,7 +25,7 @@ const ListApplications = () => {
 
     const getApplications = async () => {
         try {
-            const response = await fetch("http://192.168.180.156:5000/application");
+            const response = await fetch(`${APIServer}/application`);
             const jsonData = await response.json();
 
             setApplications(jsonData);

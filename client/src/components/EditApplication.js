@@ -4,13 +4,16 @@ const EditApplication = ({ application }) => {
     const [Application_Name, setApplication_Name] = useState(application.Application_Name);
     const [Application_URL, setApplication_URL] = useState(application.Application_URL);
     const [Description, setDescription] = useState(application.Description);
+
+    const APIServer = "http://192.168.180.14:5000";
+
     // update description function
 
     const updateApplication = async e => {
         e.preventDefault();
         try {
             const body = { Application_Name, Application_URL, Description };
-            const response = await fetch(`http://192.168.180.156:5000/application/${application.Serial}`, {
+            const response = await fetch(`${APIServer}/application/${application.Serial}`, {
                 method: "PUT",
                 headers:    { "Content-Type": "application/json" },
                 body:   JSON.stringify(body)
