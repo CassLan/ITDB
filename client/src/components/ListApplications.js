@@ -6,6 +6,7 @@ const ListApplications = () => {
     const [applications, setApplications] = useState([]);
 
     const APIServer = "http://192.168.180.14:5000"
+    //const APIServer = "http://192.168.180.156:5000"
 
     // delete funuction
 

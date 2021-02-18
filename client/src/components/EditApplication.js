@@ -5,7 +5,8 @@ const EditApplication = ({ application }) => {
     const [Application_URL, setApplication_URL] = useState(application.Application_URL);
     const [Description, setDescription] = useState(application.Description);
 
-    const APIServer = "http://192.168.180.14:5000";
+    const APIServer = "http://192.168.180.14:5000"
+    //const APIServer = "http://192.168.180.156:5000"
 
     // update description function
 
